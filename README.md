@@ -1,6 +1,6 @@
 # The-world-of-women-s-basketball-HTML-CSS
 
-Welcome to the Basketball World Women's Basketball! 
+Welcome to the World of Women's Basketball! 
 
 ## Site Contents
 
