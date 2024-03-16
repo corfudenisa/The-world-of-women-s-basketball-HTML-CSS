@@ -1,0 +1,68 @@
+body {
+  background-image: url("https://media.istockphoto.com/id/1195558598/photo/basketball-court-with-wooden-floor-and-a-basketball-hoop.jpg?s=612x612&w=0&k=20&c=Ngw-lKaYSnLxoZp4p0NswVcng91KfM1y6FwfA0oPt9I=");
+  background-position: right;
+  background-size: cover;
+}
+.container {
+  display: grid;
+  place-items: center;
+  height: 10px; /* Ajustează înălțimea containerului după necesitate */
+  grid-template-columns: 1fr; /* O singură coloană pe ecrane mici */
+  height: 100vh; /* 100% din înălțimea vizibilă a ecranului */
+  padding-bottom: 56.25%; /* Raportul de aspect 16:9 pentru videoclip */
+}
+.container p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-bottom: 30px;
+  width: 80%; /* Ajustează procentajul pentru lățimea paragrafului în container */
+  text-align: center; /* Ajustează alinierea textului dacă este necesar */
+  font-size: 20px;
+  color: white;
+  border-radius: 20px;
+  background-color: #f37546; /* Setează culoarea de fundal cu transparență */
+  padding: 10px;
+}
+.container h2 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 30px;
+  color: white;
+}
+.container li {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  grid-auto-flow: column;
+  color: white;
+}
+.gallery {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  transform-style: preserve-3d; /* Menține proprietatea de 3D a transformărilor copiilor săi */
+  animation: rotate 35s linear infinite; /* Animare de rotație pe axa Y în mod continuu */
+}
+
+@keyframes rotate {
+  from {
+    transform: perspective(1200px) rotateY(0deg);
+  }
+
+  to {
+    transform: perspective(1200px) rotateY(360deg); /* Transformare finală cu o rotație completă de 360 de grade */
+  }
+}
+
+.gallery span {
+  margin: 30px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  transform: rotateY(calc(var(--i) * 45deg)) translateZ(380px); /* Transformare de rotație și translație pe axa Z */
+}
+
+.gallery span img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Redimensionează imaginea pentru a umple complet containerul, menținând proporțiile */
+}

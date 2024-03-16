@@ -1,0 +1,136 @@
+/* Stiluri generale pentru tabel */
+table {
+  font-size: 18px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  border-spacing: 0;
+  border-collapse: collapse;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 6px;
+  overflow: hidden;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+
+  * {
+    position: relative;
+  }
+
+  /* Stiluri pentru celulele tabelului */
+  td,
+  th {
+    padding: 12px;
+    text-align: left;
+  }
+
+  /* Stiluri pentru antetul tabelului */
+  thead tr {
+    height: 60px;
+    background: #ff9286;
+    font-size: 16px;
+  }
+
+  /* Stiluri pentru randurile corpului tabelului */
+  tbody tr {
+    height: 48px;
+    border-bottom: 1px solid #d5f1e4;
+
+    &:last-child {
+      border: 0;
+    }
+  }
+
+  /* Stiluri pentru alinierea textului în celule */
+  td,
+  th {
+    &.l {
+      text-align: right;
+    }
+    &.c,
+    &.r,
+    &.img {
+      text-align: center;
+    }
+  }
+}
+
+/* Stiluri pentru ecrane mici (media query) */
+@media screen and (max-width: 767px) {
+  table {
+    display: block;
+  }
+
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  /* Ascunde antetul pe ecrane mici */
+  thead {
+    display: none;
+  }
+
+  /* Stiluri pentru randurile corpului tabelului pe ecrane mici */
+  tbody tr {
+    margin-bottom: 20px;
+  }
+
+  /* Stiluri pentru celulele tabelului pe ecrane mici */
+  td {
+    padding-left: 45%;
+    position: relative;
+  }
+
+  td:before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    top: 0;
+    font-weight: 700;
+  }
+}
+
+body {
+  background-image: url("https://www.womenssportsfoundation.org/wp-content/uploads/2021/03/iStock-1224158985-1024x683.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.hover11 figure {
+  position: relative; /* Stabilim poziționarea relativă pentru a servi ca referință pentru poziționarea absolută a elementului span */
+}
+.hover11 figure:hover img {
+  opacity: 0.5;
+}
+.hover11 figure img {
+  margin-bottom: 140px;
+  opacity: 1;
+  -webkit-transition: 0.3s ease-in-out; /* Efect de tranziție pentru animarea imaginii */
+  transition: 0.3s ease-in-out;
+  object-fit: cover; /* Asigură că imaginea se potrivește complet în container */
+  width: 200px;
+  height: auto; /* Se adaptează proporțional la lățime */
+}
+
+.hover11 figure span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Aducem textul în centrul containerului părinte */
+  background-color: rgba(0, 0, 0, 0.7);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+  padding: 8px;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.hover11 figure:hover span {
+  opacity: 1; /* Setăm opacitatea la 1 pentru a face textul vizibil la hover */
+}
